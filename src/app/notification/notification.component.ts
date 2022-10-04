@@ -15,8 +15,8 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
     this.enable$
       .pipe(
-        switchMap((enabled) =>
-          enabled
+        switchMap((enable) =>
+          enable
             ? interval(this.ticks).pipe(map((_) => this.timer$.value + 1))
             : EMPTY
         )
