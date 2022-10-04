@@ -1,0 +1,27 @@
+<button mat-icon-button (click)="resetTimer()">
+  <mat-icon
+    [matBadge]="timer$ | async"
+    matBadgeColor="warn"
+    [matBadgeHidden]="!(timer$ | async)"
+    >mail_outline</mat-icon
+  >
+</button>
+
+<div class="actions">
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="enabled$ | async"
+    (click)="toggleTimer()"
+  >
+    Start receiving
+  </button>
+  <button
+    mat-flat-button
+    color="accent"
+    [disabled]="!(enabled$ | async)"
+    (click)="toggleTimer()"
+  >
+    Stop receiving
+  </button>
+</div>
