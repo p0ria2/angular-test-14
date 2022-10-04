@@ -11,7 +11,7 @@
   <button
     mat-flat-button
     color="primary"
-    [disabled]="enabled$ | async"
+    [disabled]="enable$ | async"
     (click)="toggleTimer()"
   >
     Start receiving
@@ -19,7 +19,7 @@
   <button
     mat-flat-button
     color="accent"
-    [disabled]="!(enabled$ | async)"
+    [disabled]="!(enable$ | async)"
     (click)="toggleTimer()"
   >
     Stop receiving

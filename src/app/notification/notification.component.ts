@@ -10,10 +10,10 @@ import { BehaviorSubject, EMPTY, interval, map, switchMap } from 'rxjs';
 export class NotificationComponent implements OnInit {
   ticks = 300;
   timer$ = new BehaviorSubject(0);
-  enabled$ = new BehaviorSubject(false);
+  enable$ = new BehaviorSubject(false);
 
   ngOnInit() {
-    this.enabled$
+    this.enable$
       .pipe(
         switchMap((enabled) =>
           enabled
@@ -25,7 +25,7 @@ export class NotificationComponent implements OnInit {
   }
 
   toggleTimer() {
-    this.enabled$.next(!this.enabled$.value);
+    this.enable$.next(!this.enable$.value);
   }
 
   resetTimer() {
